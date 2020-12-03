@@ -2,5 +2,33 @@
   "name": "Start on Heroku: PHP",
   "description": "A barebones PHP app that makes use of the Silex web framework",
   "repository": "https://github.com/heroku/php-getting-started",
-  "addons": [ "heroku-postgresql:hobby-dev", "papertrail:choklad", "newrelic:wayne"]
-}
+  "addons": [
+    "papertrail",
+    {
+      "plan": "papertrail:choklad",
+      "as": "PAPAERTRAIL"
+    },
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "12"
+      }
+    }
+  ],
+  "env": {
+    "TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "value": "secret"
+    },
+    "CONCURRENCY": {
+      "description": "The number of processes to run.",
+      "value": "5"
+    }
+  },
+"formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-1x"
+    }
+  }
+ }
