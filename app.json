@@ -5,8 +5,11 @@
   "addons": [
     "papertrail",
     {
-      "plan": "papertrail:choklad",
       "as": "PAPAERTRAIL"
+    },
+    "newrelic",
+    {
+      "as": "newrelic"
     },
     {
       "plan": "heroku-postgresql",
