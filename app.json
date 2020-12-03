@@ -4,13 +4,7 @@
   "repository": "https://github.com/heroku/php-getting-started",
   "addons": [
     "papertrail",
-    {
-      "as": "PAPAERTRAIL"
-    },
     "newrelic",
-    {
-      "as": "newrelic"
-    },
     {
       "plan": "heroku-postgresql",
       "options": {
